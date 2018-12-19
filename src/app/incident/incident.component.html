@@ -1,0 +1,63 @@
+<div class="container-fluid incident-body">
+  <!-- <ngb-carousel>
+    <ng-template ngbSlide>
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </div>
+    </ng-template>
+    <ng-template ngbSlide>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </div>
+    </ng-template>
+  </ngb-carousel> -->
+
+  <div class="jumbotron incident-jumbotron">
+    <h1 class="display-4">Incidents</h1>
+    <p class="lead">{{group}} Incident SLA Matrix</p>
+    <hr class="my-4">
+    <div class="card">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title">Incident SLA</h5>
+          <button type="button" class="btn btn-light" style="margin-bottom: 9px;margin-top: -6px; width: 50px;">{{timeLeft}}</button>
+        </div>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Incident</th>
+              <th scope="col">Created</th>
+              <th scope="col">Type</th>
+              <th scope="col">Status</th>
+              <th scope="col">Duration</th>
+              <th scope="col">SLA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let incident of incidents">
+              <th scope="row">{{incident.position}}</th>
+              <td>{{incident.incident}}</td>
+              <td>{{incident.created}}</td>
+              <td>{{incident.type}}</td>
+              <td>{{incidentStatus.get(incident.status)}}</td>
+              <td>{{incident.duration}}</td>
+              <td>{{incident.sla}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
